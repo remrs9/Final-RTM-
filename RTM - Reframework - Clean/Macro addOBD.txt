@@ -1,0 +1,22 @@
+Sub addOBD()
+
+Dim Report As String
+Dim lastRow, lastCol, row, col, lenString As Long
+Dim sht, dataSht As Worksheet
+Report = ActiveSheet.Name
+Set dataSht = Worksheets(Report)
+lastRow = dataSht.Cells.Find("*", SearchOrder:=xlByRows, SearchDirection:=xlPrevious).row
+
+' Get environment desktop path
+Dim path1 As String
+path1 = Environ("USERPROFILE") & "\Desktop\ASM file\[WTPE444.xlsx]Sheet1"
+Dim i As Integer
+
+' index match "WTPE444.xlsx Column-Delivery" to "OutboundWTPE3 Column-17"
+For i = 2 To lastRow
+    Range("R" & i).Value = "=INDEX('" & path1 & "'!$B:$B,MATCH(C" & i & ",'" & path1 & "'!$E:$E,0))"
+Next i
+
+Range("R1").Value = "OBD"
+
+End Sub

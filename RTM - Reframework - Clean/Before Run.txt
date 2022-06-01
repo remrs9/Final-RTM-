@@ -1,0 +1,5 @@
+Before run, be sure to:
+Place "WTPE444.xlsx" in Desktop/ASM file
+Place "Macro addOBD.txt" in Desktop/ASM file
+Create a folder "Outbound_WTPE3" on desktop
+Use Edge to open and login RTM
